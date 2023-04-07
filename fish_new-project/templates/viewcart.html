@@ -1,0 +1,74 @@
+
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Sign Up Form by Colorlib</title>
+    
+        <!-- Font Icon -->
+        <link rel="stylesheet" href="fonts/material-icon/css/material-design-iconic-font.min.css">
+    
+        <!-- Main css -->
+        <link rel="stylesheet" href="../static/product_form/css/style.css">
+    </head>
+    <body>
+    <center>
+        <div class="main">
+    
+            
+            <!-- Sing in  Form -->
+            <section class="sign-in" style="margin-top: -105px;">
+                <div class="container">
+                    <div class="signin-content">
+                       
+    
+                        <div class="signin-form">
+                            <h2 class="form-title">ADD PRODUCTS TO CART</h2>
+                            <form method="post" class="register-form" id="login-form" action="{% url 'carts' %}">
+                            {% csrf_token %}
+                                <div class="form-group">
+                                    Name
+                                    <input type="text" name="prod_name" id="your_name" placeholder="Your Name" value="{{fm.product_name}}"/>
+                                   
+                                </div>
+                                <div class="form-group">
+                                    Cost per kg
+                                    <input type="text" name="product_cost" id="your_name" placeholder="Your Name" value="{{fm.product_cost}}"/>
+                                    
+                                </div>
+    
+    
+                                <div class="form-group">
+                                    Quantity in kg
+                                   <input type="text" name="quantity" id="your_name" placeholder="Your Name"/>
+                                   
+                                </div>
+                                
+                                <!-- <div class="form-group">
+                                    Price
+                                    <input type="password" name="price" id="your_pass" placeholder="Password"/>
+                                    
+                                </div> -->
+                                <div class="form-group form-button">
+                                    <input type="submit" name="signin" id="signin" class="form-submit" value="Add"/>
+                                    <button class="btn btn-primary" id="signin"><a href="{% url 'customer' %}">Go Back</a></button>
+                                </div>
+                            </form>
+                            
+                        </div>
+                    </div>
+                </div>
+            </section>
+    
+        </div>
+    </center>
+    
+        <!-- JS -->
+        <script src="/..static/product_form/css/style.css"></script>
+        <script src="js/main.js"></script>
+    </body><!-- This templates was made by Colorlib (https://colorlib.com) -->
+    </html>
+    
+   

@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+  <head>
+  	<title>viewboat</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<link href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,700' rel='stylesheet' type='text/css'>
+
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	
+	<link rel="stylesheet" href="../static/view-css/style.css">
+
+	</head>
+    <style>
+    .button{
+    background-color: rgb(55, 69, 90);
+  border: none;
+  color: rgb(253, 252, 252);
+  padding: 1px 8px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block; 
+  font-size: 14px;
+  margin: 4px 2px;
+  cursor: pointer;
+
+}
+    </style>
+	<body>
+	<section class="ftco-section" style="background-color: #264364 ;">
+		<div class="container">
+			<div class="row justify-content-center">
+				<div class="col-md-6 text-center mb-5">
+					<h2 class="heading-section">Boat View</h2>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-12">
+					<div class="table-wrap">
+						<table class="table table-responsive-xl">
+						  <thead>
+						    <tr>
+						    	<th>&nbsp;</th> 
+						    	<th>Boat_No</th>
+						      <th>Boat_Name</th>
+						      <th>No_Of_Fishermen</th>
+                              <th>Boat_Length</th>
+                              <th>Weather</th>
+                              <!-- <th>Location</th> -->
+                              <th>Status</th>
+						      <th>&nbsp;</th>
+						    </tr>
+						  </thead>
+						  <tbody>
+                            {% for info in Data %}
+						    <tr class="alert" role="alert" style="border-color: #264364 ;">
+						    	<td></td>
+						      <td class="d-flex align-items-center">
+						      	<div class="img" style="background-image: url(/media/{{info.upload_photo}});"></div>
+						      	<div class="pl-3 email">
+						      		<span>{{info.boat_no}}</span>
+                                    <span>&nbsp;</span>
+						      	
+						      	</div>
+						      </td>
+						      <td>{{info.boat_name}}</td>
+						      <td >{{info.no_of_fishermen}}</span></td>
+						      <td>
+                                {{info.boat_length}}
+				        	</td>
+						    <td> <a href="{% url 'main' %}" class="status" style="color: #629caa;">weather</a></td>
+							<td><a href="{% url 'map' %}" class="status" style="color: #629caa;">Location</a></td>
+							<td> <a href="{% url 'status' %}" class="status" style="color: #629caa;">Status</a></td>
+                            <td><a href="{% url 'edit' info.id %}" class="button">&nbsp;Edit&nbsp;&nbsp;&nbsp;</a><span class="active"></span><br>
+                            <a href="{% url 'delete' info.id %}" class="button" >Delete</a><span class="active"></span></td></td>
+							
+						    </tr>
+							{% endfor %}
+						  </tbody>
+						</table>
+						<center>
+							{% for message in messages %}
+							<p style="color:  #ffffff;" id="messages">{{message}}</p>
+							{% endfor %}
+						</center>
+					
+						
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<script src="static/view-js/jquery.min.js"></script>
+  <script src="static/view-js/popper.js"></script>
+  <script src="static/view-js/bootstrap.min.js"></script>
+  <script src="static/view-js/main.js"></script>
+
+	</body>
+</html>
+

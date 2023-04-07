@@ -1,0 +1,158 @@
+<html>
+    <head>
+        <title>Trolling view</title>
+        <style>
+            @keyframes slide {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: -120px 60px;
+  }
+}
+
+#InfoBanner{
+  margin-bottom: 10px;
+  position: absolute;
+  left: -15px;
+  top: 115px;
+  text-align: center;
+  width: 100%;
+}
+
+.reversed {
+  display: inline-block;
+  padding: 0.3em;
+  padding-left: 0.3em;
+  margin-left: 0.8em;
+  position: relative;
+  text-align: center;
+  vertical-align: middle;
+  line-height: 1;
+  /* color: #fff; */
+  font-size: 15px;
+  background-color:#ede1e1;
+}
+.reversed:before, .reversed:after {
+  content: '';
+  width: 0;
+  height: 0;
+  right: -0.8em;
+  position: absolute;
+  top: 0;
+  border-top: 0.8em solid #ede1e1;
+}
+.reversed:after {
+  top: auto;
+  bottom: 0;
+  border-top: none;
+  border-bottom: 0.8em solid #ede1e1;
+}
+.reversedRight:before, .reversedRight:after{
+  border-right: 0.8em solid transparent;
+  right: -0.8em;
+}
+.reversedRight{
+  width: 17px;
+  border-radius: 5px 0px 0px 5px;
+  animation: tilt 2s infinite;
+}
+@keyframes tilt {
+  0% {
+    left: 0%;
+  }
+  50% {
+    left: 9px;
+  }
+  100% {
+    left: 0px;
+  }
+}
+.reversedLeft{
+  margin-left:15px;
+  border-radius: 0px 5px 5px 0px;
+}
+.reversedLeft:before, .reversedLeft:after {
+  content: '';
+  width: 0;
+  height: 0;
+  border-left: 0.8em solid transparent;
+  left: -0.8em;
+  position: absolute;
+}
+.reversedLeft:after {
+  top: auto;
+  bottom: 0;
+  border-top: 0.8em solid #ede1e1;
+  border-bottom: none;
+}
+.reversedLeft:before {
+  bottom: auto;
+  top:0;
+  border-bottom: 0.8em solid #ede1e1;
+  border-top: none;
+}
+
+.bgAnimation{
+  background-color:#ede1e1;
+  background-image: linear-gradient(
+    45deg,
+    #ede1e1 25%,
+    transparent 25%,
+    transparent 75%,
+    #ede1e1 75%,
+    #ede1e1
+  ),linear-gradient(
+    -45deg,
+    #ede1e1 25%,
+    transparent 25%,
+    transparent 75%,
+    #ede1e1 75%,
+    #ede1e1
+  );
+  background-size: 60px 60px;
+  animation: slide 4s infinite linear;
+}
+body{
+  color: rgb(242, 103, 103);
+  /* background-color: red; For browsers that do not support gradients */
+  /* background-image: linear-gradient(to right, rgb(4, 168, 213) , rgb(178, 226, 236)); */
+  background-image: url('../static/hme/img/addboat.jpg');
+  height: 500px;
+  width: 1000px;
+}
+
+        </style>
+    </head>
+<body> 
+  <!-- <div style=""></div> -->
+<div id="InfoBanner" >
+    <span class="reversed reversedRight">
+      <span>
+        &#9888;
+      </span>
+    </span>
+    <span class="reversed reversedLeft">
+      <!-- <table>
+        
+        <tr>
+          <th>Start Date</th>
+          <th>End Date</th>
+          <th>Alert</th>
+        </tr>
+        {% for tr in i %}
+        <tr>
+          <td>{{tr.start_date}}</td>
+          <td>{{tr.end_date}}</td>
+          <td>{{tr.alert}}</td>
+        </tr>
+        {% endfor %}
+      </table> -->
+    <h1> {{j}}</h1><br>
+    </span><br><br> 
+    <button><a href="https://keralakaumudi.com/en/news/news.php?id=823628&u=52-day-trawling-ban-in-kerala-from-june-9-to-july-31" style="text-decoration: none; color:black">For More Information</a></button> 
+    <button><a href="{% url 'employee' %}" style="text-decoration: none; color:black">Go Back</a></button>
+  </div>
+  </body>
+ 
+ 

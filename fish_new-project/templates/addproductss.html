@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Sign Up Form by Colorlib</title>
+
+    <!-- Font Icon -->
+    <link rel="stylesheet" href="fonts/material-icon/css/material-design-iconic-font.min.css">
+
+    <!-- Main css -->
+    <link rel="stylesheet" href="../static/product_form/css/style.css">
+</head>
+<body >
+<center>
+    <div class="main" >
+
+        
+        <!-- Sing in  Form -->
+        <section class="sign-in" style="margin-top: -105px;">
+            <div class="container">
+                <div class="signin-content">
+                   
+
+                    <div class="signin-form">
+                        <h2 class="form-title">ADD PRODUCT</h2>
+                        <form method="POST" class="register-form" id="login-form" enctype="multipart/form-data" action="{% url 'product_add' %}">
+                        {% csrf_token %}
+                            <div class="form-group">
+                                Name
+                                <!-- <input type="text" name="your_name" id="your_name" placeholder="Your Name"/> -->
+                                {{ fm.product_name }}
+                            </div>
+                            <div class="form-group">
+                                Cost
+                                <!-- <input type="text" name="your_name" id="your_name" placeholder="Your Name"/> -->
+                                {{ fm.product_cost }}
+                            </div>
+
+
+                            <div class="form-group">
+                                Decription
+                               <!-- <input type="text" name="your_name" id="your_name" placeholder="Your Name"/> -->
+                               {{ fm.product_dis }}
+                            </div>
+                            
+                            <div class="form-group">
+                                Image
+                                <!-- <input type="password" name="your_pass" id="your_pass" placeholder="Password"/> -->
+                                {{ fm.product_img }}
+                            </div>
+                            <div class="form-group form-button">
+                                <input type="submit" name="signin" id="signin" class="form-submit" value="Add"/>
+                                <button class="btn btn-primary" id="signin"><a href="{% url 'employee' %}">Go Back</a></button>
+                            </div>
+                        </form>
+                        
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </div>
+</center>
+
+    <!-- JS -->
+    <script src="/..static/product_form/css/style.css"></script>
+    <script src="js/main.js"></script>
+</body><!-- This templates was made by Colorlib (https://colorlib.com) -->
+</html>

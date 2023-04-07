@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>status</title>
+   
+</head>
+<style>
+    *
+{
+  margin: 0;
+  padding: 0;
+  outline: none;
+}
+
+body
+{
+  font-family: 'Roboto', sans-serif;
+  overflow: hidden;
+  background: #3d93bb;;
+}
+
+div.widget
+{
+  position: relative;
+  width: 355px;
+  height: 125px;
+  margin: 150px auto;
+  background-color: #fcfdfd;
+  border-radius: 9px;
+  padding: 25px;
+  padding-right: 30px;
+  box-shadow: 0px 31px 35px -26px #080c21;
+}
+
+div.left-panel
+{
+  
+}
+
+div.date
+{
+  font-size: 14px;
+  font-weight: bold;
+  color: rgba(0,0,0,0.5);
+}
+
+div.city
+{
+  font-size: 21px;
+  font-weight: bold;
+  text-transform: uppercase;
+  padding-top: 5px;
+  color: rgba(0,0,0,0.7);
+}
+
+div.temp
+{
+  font-size: 81px;
+  color: rgba(0,0,0,0.9);
+  font-weight: 100;
+}
+
+div.panel
+{
+  display: inline-block;
+}
+
+div.right-panel
+{
+  position: absolute;
+  float: right;
+  top: 0;
+  margin-top: 35px;
+  padding-left: 10px;
+}
+</style>
+<body class="body" >
+    <div class="widget">
+            
+        <div class="left-panel panel">
+            <div class="date">
+               {{context.date}}
+            </div><br>
+            <div class="city">
+                {{context.b}}
+            </div>
+            <div class="temp">
+               <img src="https://s5.postimg.cc/yzcm7htyb/image.png" alt="" width="60">
+               
+            </div>
+        </div>
+        <div class="right-panel panel">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ0Vmd6yaUXfBRehUfPTwt7FSf4lvPUFCWvqg&usqp=CAU" alt="" width="160">
+        </div>
+
+    </div>
+</body>
+</html>

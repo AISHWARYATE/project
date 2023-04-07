@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>addboat</title>
+</head>
+<style>
+/* .body{
+    background-image: url(../static/addboat.jpg);
+    background-size: fill;
+    background-repeat: 300px 300px;
+    background-position: center center;
+}
+.h2{
+    margin-left: 100px;
+    margin-top: 70px;
+}
+input[type=text], select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+} */
+
+@import url("https://fonts.googleapis.com/css?family=Spartan&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-image: url("addboat.jpg") center center no-repeat;
+  background-color: #1b3757;
+  background-size: cover;
+  width: 100vw;
+  height: 100vh;
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  font-size: 12pt;
+  font-family: "Spartan";
+  color: #ffffff;
+}
+
+.contact-us {
+  background: #506880;
+  padding: 50px 100px;
+  border-top: 10px solid rgb(55, 69, 90);
+}
+
+label, input, textarea {
+  display: block;
+  width: 100%;
+  font-size: 12pt;
+  line-height: 24pt;
+  font-family: "Spartan";
+}
+
+input {
+  margin-bottom: 24pt;
+}
+
+h3 {
+  font-weight: normal;
+  font-size: 10pt;
+  line-height: 24pt;
+  font-style: italic;
+  margin: 0 0 0.5em 0;
+}
+
+span {
+  font-size: 8pt;
+}
+
+em {
+  color: #0e3a47;
+  font-weight: bold;
+}
+
+input, textarea {
+  border: none;
+  border: 1px solid rgba(3, 3, 3, 0.1);
+  border-radius: 2px;
+  background: #506880;
+  padding-left: 5px;
+  outline: none;
+}
+
+input:focus, textarea:focus {
+  border: 1px solid #1b3757;
+}
+
+textarea {
+  resize: none;
+}
+
+button {
+  display: block;
+  float: right;
+  line-height: 24pt;
+  padding: 0 20px;
+  border: none;
+  background: #1b3757;
+  color: white;
+  letter-spacing: 2px;
+  transition: 0.2s all ease-in-out;
+  border-bottom: 2px solid transparent;
+  outline: none;
+}
+button:hover {
+  background: inherit;
+  color: #1b3757;
+  border-bottom: 2px solid rgb(55, 69, 90);
+}
+
+::selection {
+  background: #ffc7b8;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus {
+  border: 1px solid #060808;
+  -webkit-text-fill-color: #ffffff;
+  -webkit-box-shadow: 0 0 0px 1000px #264364 inset;
+  transition: background-color 5000s ease-in-out 0s;
+}
+</style>
+<body class="body" >
+    <!-- <h2 class="h2">Add boat details</h2>
+    <form>
+        <label>Boat No.</label>
+        <input type="text" name="boatno" placeholder="boat number">
+        <br>
+        <label>Boat Name</label>
+        <input type="text" name="boatname" placeholder="boat name">
+        <br>
+        <label>No.Of Fishermen</label>
+        <input type="text" name="nooffishrmen" placeholder="NO.OF Fishermen">
+        <br>
+        <label>Boat Length</label>
+        <input type="text" name="boatlength" placeholder="Boat Length">
+
+
+
+    </form> -->
+    <div class="contact-us">
+        <form action="#" method="post" enctype="multipart/form-data"> 
+            {%  csrf_token %}
+          <label for="customerName">Boat No </label>
+          <!-- <input id="customerName" name="customerName" required="" type="text" /> -->
+          {{fom.boat_no}}
+          <label for="customerEmail">Boat Name</label>
+          <!-- <input id="customerEmail" name="customerEmail" /> -->
+          {{fom.boat_name}}
+          <label for="customerPhone">No.Of Fishermen</label>
+          <!-- <input id="customerPhone" name="customerPhone"  /> -->
+          {{fom.no_of_fishermen}}
+          <label for="orderNumber">Boat Length</label>
+          <!-- <input id="orderNumber" name="orderNumber" type="text" /> -->
+          {{fom.boat_length}}
+          <label for="orderNumber">Upload Photo</label>
+          <!-- <input id="orderNumber" name="orderNumber" type="text" /> -->
+          {{fom.upload_photo}}
+          <input type="submit" id="customerOrder" value="Submit">
+        </form>
+      </div>
+      
+  
+   
+</body>
+</html>
